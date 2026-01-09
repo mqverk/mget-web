@@ -18,7 +18,7 @@ export default function UsagePage() {
       <h2>Usage</h2>
       <p>Run mget from the project root after building. These are the fast paths you will use most often.</p>
 
-      <div className="grid" style={{ marginTop: 18 }}>
+      <div className="stack" style={{ marginTop: 18 }}>
         <div className="card">
           <h3>Search for projects</h3>
           <div className="code-block">
