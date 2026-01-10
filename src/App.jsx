@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "./logo.svg";
 
 const actions = [
   {
@@ -48,6 +49,37 @@ const usageBlocks = [
   },
 ];
 
+const optionBlocks = [
+  {
+    flag: "-f, --find <name>",
+    detail: "Search for a project by name or slug.",
+  },
+  {
+    flag: "-p, --plugin <slug>",
+    detail: "Download a plugin by slug (Paper, Spigot, Bukkit).",
+  },
+  {
+    flag: "-m, --mod <slug>",
+    detail: "Download a mod by slug (Forge, Fabric, Neoforge, Quilt).",
+  },
+  {
+    flag: "-v, --version <ver>",
+    detail: "Target a specific Minecraft version, e.g., 1.21.1.",
+  },
+  {
+    flag: "-l, --loader <type>",
+    detail: "Set loader: forge, fabric, neoforge, quilt, etc.",
+  },
+  {
+    flag: "-s, --server <type>",
+    detail: "Set server type for plugins: paper, spigot, bukkit, etc.",
+  },
+  {
+    flag: "-h, --help",
+    detail: "Show help and exit.",
+  },
+];
+
 const githubUrl = "https://github.com/mqverk/mget";
 
 function App() {
@@ -57,7 +89,10 @@ function App() {
       <div className="glow glow-2" />
 
       <header className="nav">
-        <div className="logo">mget</div>
+        <div className="logo">
+          <img src={logo} alt="mget" />
+          <span className="logo-text">mget</span>
+        </div>
         <div className="nav-actions">
           <a className="ghost" href="#install">Install</a>
           <a className="solid" href={githubUrl} target="_blank" rel="noreferrer">
@@ -138,9 +173,20 @@ function App() {
               </div>
             ))}
           </div>
-          <p className="hint">
-            Options: -f/--find, -p/--plugin, -m/--mod, -v/--version, -l/--loader, -s/--server.
-          </p>
+          <div className="options">
+            <div className="options-head">
+              <h3>Options</h3>
+              <p>Flags to steer searches and downloads.</p>
+            </div>
+            <div className="option-grid">
+              {optionBlocks.map((opt) => (
+                <div key={opt.flag} className="option-card">
+                  <div className="option-flag">{opt.flag}</div>
+                  <div className="option-desc">{opt.detail}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
       </main>
 
