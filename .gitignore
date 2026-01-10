@@ -1,4 +1,8 @@
 node_modules
-.next
+.dist
+.vite
+.idea
 .DS_Store
-.env*
+npm-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
